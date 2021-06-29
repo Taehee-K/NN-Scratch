@@ -14,4 +14,5 @@ pip install pandas
 pip install matplotlib
 ```
 ## Models
-* [MLP(Multi-Layer Perceptron)](./mlp.ipynb) <!--MLP 설명 추가-->
+* **[MLP(Multi-Layer Perceptron)](./mlp.ipynb)** <!--MLP 설명 추가-->
+* **[CNN(Convolutional Neural Network)](./cnn.py)** <!--MLP 설명 추가-->
