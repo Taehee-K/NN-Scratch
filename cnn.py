@@ -58,8 +58,22 @@ class CONV_LAYER:
                         for i in range(self.dim_kernel):    # kernel dimension
                             for j in range(self.dim_kernel):    # kernel dimension
                                 dK[c, k, i, j]+= padded_I[c, x+i, y+j]* dO[k, x, y]
+        
+        # dI 만드는 convolutional 연산
+        dI = np.zeros((self.batch_size, self.num_inch, self.dim_ifmap, self.dim_ifmap), dtype=float)
+        rotated_kernels = np.rot90(np.rot90(self.kernels, axes=(2,3)), axes=(2,3))
+        padded_dO = np.pad(dO, ((0, 0), (0,0), (self.padding, self.padding), (self.padding, self.padding)), 'constant')
+        for n in range(self.batch_size):
+            for x in range(self.dim_ofmap):
+                for y in range(self.dim_ofmap):
+                    for k in range(self.num_outch):
+                        for c in range(self.num_inch):
+                            for i in range(self.dim_kernel):
+                                for j in range(self.dim_kernel): 
+                                    dI[n, c, x, y] += padded_dO[n, k, x + i, y + j] * rotated_kernels[c, k, i, j]
+        
 
-        return dK
+        return dK, dI
 
 class FC_LAYER:
     def __init__(self, num_in, num_out):
