@@ -1,9 +1,10 @@
+import os
 import numpy as np              # library for linear algebra
 import h5py                     # data
 from random import randint      # random initialization
 
 #load MNIST data
-MNIST_data = h5py.File('MNISTdata.hdf5', 'r')               # load data
+MNIST_data = h5py.File('./data/MNISTdata.hdf5', 'r')               # load data
 x_train = np.float32(MNIST_data['x_train'][:])              # train data as numpy array
 y_train = np.int32(np.array(MNIST_data['y_train'][:,0]))    # train label
 x_test = np.float32(MNIST_data['x_test'][:])                # test data as numpy array
