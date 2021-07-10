@@ -1,6 +1,6 @@
 # Neural Networks from Scratch
 
-Building neural networks from scratch using only numpy, without of the help of deep learning frameworks such as TensorFlow and Pytorch. 
+Building neural networks from scratch using only numpy, without the help of deep learning frameworks such as TensorFlow and Pytorch. 
 
 This repository holds course assignments from "Artificial Intelligence" taught by Prof. Jaehyeong Sim at Ewha Womans University
 
