@@ -7,10 +7,8 @@ This repository holds course assignments from "Artificial Intelligence" taught b
 ## Requirements
 Following libraries are needed.
 * numpy
-* pandas
 ```
 pip install numpy
-pip install pandas
 ```
 ## Models
 * **[MLP(Multi-Layer Perceptron)](./mlp.ipynb)** <!--MLP 설명 추가-->
